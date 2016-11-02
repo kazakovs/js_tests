@@ -26,6 +26,17 @@ function fillCanvasWithVLines(canvas, numberLines){
 	ctx.stroke();
 }
 
+function fillCanvasWithText(canvas, numberLines, text, fontName){
+	ctx = canvas.getContext("2d");
+	w=canvas.width;
+	h=canvas.height;
+	step = h/numberLines;
+	ctx.font=step+"px "+fontName;
+	for (i = 1; i <= numberLines; i++) {
+		ctx.fillText(text, 0, i*step-5);
+	};
+}
+
 function redraw(){
 	ctx = c.getContext("2d");
 	ctx.clearRect(0,0, c.width, c.height);
@@ -34,6 +45,11 @@ function redraw(){
 	}
 	if(document.getElementById('v_chkbox').checked){
 		fillCanvasWithVLines(c, 10);
+	}
+	text=document.getElementById('textArea').value;
+	console.log('Text' + text);
+	if(text){
+		fillCanvasWithText(c, 10, text, 'Georgia');
 	}
 }
 

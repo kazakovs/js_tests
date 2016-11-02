@@ -12,10 +12,15 @@
 </head>
 
 <body>
-	<input type="checkbox" name"vertical" id="v_chkbox" onchange="redraw()">Vertical
-	<input type="checkbox" name"horizontal" id="h_chkbox" onchange="redraw()">Horizontal
-	<br/>
-	<canvas id="myCanvas" width="500" height="500"></canvas>
+	<div id="canvasArea">
+		<canvas id="myCanvas" width="500" height="500"></canvas>
+	</div>
 	<script src="js/scripts.js"></script>
+	<div id="inputData">
+		<input type="checkbox" name"vertical" id="v_chkbox" onchange="redraw()">Vertical
+		<input type="checkbox" name"horizontal" id="h_chkbox" onchange="redraw()">Horizontal
+		<br/>
+		<textarea rows="4" cols="50" id="textArea" onchange="redraw()">A</textarea>
+	</div>
 </body>
 </html>
