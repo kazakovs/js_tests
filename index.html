@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML+JS sandbox</title>
+	<meta name="description" content="HTML+JS sandbox">
+
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<input type="checkbox" name"vertical" id="v_chkbox" onchange="redraw()">Vertical
+	<input type="checkbox" name"horizontal" id="h_chkbox" onchange="redraw()">Horizontal
+	<br/>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
