@@ -1,0 +1,15 @@
+body {
+  background-color: #ccffff
+}
+
+#canvasArea {
+  background-color: #ffffff;
+  position: absolute;
+  height: 600px;
+}
+
+#dataArea {
+  float: right;
+  border: 3px solid #00e6e6;
+  padding: 10px;
+}
