@@ -1,16 +1,25 @@
+
 var c = document.getElementById("myCanvas");
 var lineHOffset = 5;
 var lineVOffset = 5;
 var letterHOffset = 2;
 var h = document.getElementById("canvasArea").offsetHeight;
-var w = h/1.414;
+var w = h/1.414; // A4 ratio
 c.height = h;
 c.width = w;
 
+
+
+window.onresize = function(){
+	h = document.getElementById("canvasArea").offsetHeight;
+	w = h/1.414;
+	c.height = h;
+	c.width = w;
+	redraw();
+}
+
 function fillCanvasWithHLines(canvas, numberLines){
 	ctx = canvas.getContext("2d");
-	w=canvas.width;
-	h=canvas.height;
 	step = h/numberLines;
 	ctx.beginPath();
 	for (i = 1; i <= numberLines; i++) {
@@ -22,8 +31,6 @@ function fillCanvasWithHLines(canvas, numberLines){
 
 function fillCanvasWithVLines(canvas, numberLines){
 	ctx = canvas.getContext("2d");
-	w=canvas.width;
-	h=canvas.height;
 	step = h/numberLines;
 	ctx.beginPath();
 	for (i = 1; i <= numberLines; i++) {
@@ -35,20 +42,17 @@ function fillCanvasWithVLines(canvas, numberLines){
 
 function fillCanvasWithObliqueLines(canvas) {
 	ctx = canvas.getContext("2d");
-	w=canvas.width;
-	h=canvas.height;
-	ratio = 0.128571429;
+	ratio = 0.128571429; // 
 	ctx.beginPath();
-
 	ctx.strokeStyle="#1010ff";
 
-	for(i=1; i<1/ratio/Math.cos(65/180*3.14); i++){
+	for(i=1; i<1/ratio/Math.cos(65/180*Math.PI); i++){
 			x = i*w*ratio;
 			y = 0;
 			console.log("x: " + x + " y: " +y);
 			ctx.moveTo(x, y);
 			x = 0;
-			y = i*w*ratio/Math.cos(65/180*3.14);
+			y = i*w*ratio/Math.cos(65/180*Math.PI);
 			console.log("x: " + x + " y: " +y);
 			ctx.lineTo(x, y)
 	}

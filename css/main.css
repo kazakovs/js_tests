@@ -1,11 +1,11 @@
 body {
-  background-color: #ccffff
+  background-color: #ccff99
 }
 
 #canvasArea {
   background-color: #ffffff;
   position: absolute;
-  height: 600px;
+  height: 95vh;
 }
 
 #dataArea {
