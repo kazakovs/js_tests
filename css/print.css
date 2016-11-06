@@ -1,0 +1,6 @@
+*{display: hidden;}
+canvas{
+  display: block;
+  height:297mm;
+  width:210mm;
+}

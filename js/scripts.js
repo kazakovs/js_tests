@@ -1,7 +1,7 @@
 
 var c = document.getElementById("myCanvas");
-var lineHOffset = 5;
-var lineVOffset = 5;
+var lineHOffset = 0;
+var lineVOffset = 0;
 var letterHOffset = 2;
 var h = document.getElementById("canvasArea").offsetHeight;
 var w = h/1.414; // A4 ratio
@@ -42,9 +42,9 @@ function fillCanvasWithVLines(canvas, numberLines){
 
 function fillCanvasWithObliqueLines(canvas) {
 	ctx = canvas.getContext("2d");
-	ratio = 0.128571429; // 
+	ratio = 0.128571429; //
 	ctx.beginPath();
-	ctx.strokeStyle="#1010ff";
+	ctx.strokeStyle="#5050ff";
 
 	for(i=1; i<1/ratio/Math.cos(65/180*Math.PI); i++){
 			x = i*w*ratio;
@@ -81,6 +81,10 @@ function fillCanvasWithText(canvas, numberLines, text, fontName){
 	}
 	ctx.fillStyle = "#000000";
 	ctx.strokeStyle = "#000000"
+}
+
+function printImg() {
+	window.print();
 }
 
 function redraw(){

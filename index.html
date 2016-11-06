@@ -6,6 +6,7 @@
 	<title>HTML+JS sandbox</title>
 	<meta name="description" content="HTML+JS sandbox">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/print.css" media="print" type="text/css" />
 
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<!-- <page width="21cm"  height="29.7cm"></page> -->
 	<div id="canvasArea">
-		<canvas id="myCanvas" style="border:1px solid #000000;"></canvas>
+		<canvas id="myCanvas"></canvas>
 	</div>
 	<script src="js/scripts.js"></script>
 	<div id="dataArea">
@@ -27,6 +28,8 @@
 		<input type="text" id="linesCount">
 		<br/>
 		<textarea rows="4" cols="50" id="textArea" onchange="redraw()">A</textarea>
+		<br/>
+		<button id="saveBtn" onclick="printImg()">save image</button>
 	</div>
 </body>
 </html>
